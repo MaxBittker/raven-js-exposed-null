@@ -5,12 +5,12 @@
   "main": "exposed-null-check.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaxBittker/raven-js-exposed-nul.git"
+    "url": "git+https://github.com/MaxBittker/raven-js-exposed-null.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MaxBittker/raven-js-exposed-nul/issues"
+    "url": "https://github.com/MaxBittker/raven-js-exposed-null/issues"
   },
-  "homepage": "https://github.com/MaxBittker/raven-js-exposed-nul#readme"
+  "homepage": "https://github.com/MaxBittker/raven-js-exposed-null#readme"
 }
