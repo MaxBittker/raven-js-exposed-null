@@ -1,5 +1,5 @@
 # Exposed Null Checker
-This plugin allows Raven-js to report when and where a null type may have been rendered into the DOM
+This plugin allows Raven-js to report when and where a null type may have been rendered into the DOM.
 By default, it looks for occurrences of: "NaN", "undefined", and "[object Object]".
 
 why?:
