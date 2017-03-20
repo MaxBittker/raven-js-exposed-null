@@ -1,25 +1,16 @@
 {
-  "name": "chrome-extension",
+  "name": "raven-js-exposed-null",
   "version": "1.0.0",
-  "description": "example chrome extension",
-  "main": "popup.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "scan for rendered null",
+  "main": "exposed-null-check.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaxBittker/chrome-extension.git"
+    "url": "git+https://github.com/MaxBittker/raven-js-exposed-nul.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MaxBittker/chrome-extension/issues"
+    "url": "https://github.com/MaxBittker/raven-js-exposed-nul/issues"
   },
-  "homepage": "https://github.com/MaxBittker/chrome-extension#readme",
-  "dependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-preset-es2015": "^6.22.0",
-    "raven-js": "../raven-js"
-  }
+  "homepage": "https://github.com/MaxBittker/raven-js-exposed-nul#readme"
 }
