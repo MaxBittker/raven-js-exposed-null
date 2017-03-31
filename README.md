@@ -7,8 +7,8 @@ why? Because javascript is perfectly happy to let you do this:
 and this:
 ![NaN](https://pbs.twimg.com/media/C7P_4k2U0AA16Bp.jpg:large)
 without raising exceptions.
-
 Usage:
+`npm i raven-js-exposed-null -S`
 
 ```
 var Raven = require('raven-js') ;
@@ -16,6 +16,6 @@ Raven
     .config('https://YOURDSN@sentry.io/*******')
     .install();
 
-var exposedNullCheck = require('exposed-null-check');
+var exposedNullCheck = require('raven-js-exposed-null');
 exposedNullCheck(Raven);
 ```

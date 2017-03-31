@@ -29,6 +29,7 @@ function installNullChecker(Raven, config) {
       reportNull(newText);
     }
   }
+  
   function walk(node) {
     // I stole this function from cloud 2 butt:
     // http://is.gd/mwZp7E
