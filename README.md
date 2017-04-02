@@ -6,6 +6,10 @@ why? Because javascript is perfectly happy to let you do this:
 ![spotify-undefined](https://spotify.i.lithium.com/t5/image/serverpage/image-id/28942i787980A970079666?v=1.0)
 and this:
 ![NaN](https://pbs.twimg.com/media/C7P_4k2U0AA16Bp.jpg:large)
+and this:
+![nyt-NaN](https://pbs.twimg.com/media/C8aCN_cWAAQEENI.jpg)
+
+
 without raising exceptions.
 Usage:
 `npm i raven-js-exposed-null -S`
