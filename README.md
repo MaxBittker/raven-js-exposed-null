@@ -4,10 +4,7 @@ By default, it looks for occurrences of: "NaN", "undefined", and "[object Object
 
 why? Because javascript is perfectly happy to let you do this:
 ![spotify-undefined](https://spotify.i.lithium.com/t5/image/serverpage/image-id/28942i787980A970079666?v=1.0)
-and this:
 ![NaN](https://pbs.twimg.com/media/C7P_4k2U0AA16Bp.jpg:large)
-and this:
-![nyt-NaN](https://pbs.twimg.com/media/C8aCN_cWAAQEENI.jpg)
 
 
 without raising exceptions.
@@ -23,3 +20,6 @@ Raven
 var exposedNullCheck = require('raven-js-exposed-null');
 exposedNullCheck(Raven);
 ```
+
+![nyt-NaN](https://pbs.twimg.com/media/C8aCN_cWAAQEENI.jpg)
+![paypall-undefined](http://i.imgur.com/iac3qtJ.jpg)
