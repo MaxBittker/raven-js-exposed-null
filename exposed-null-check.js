@@ -5,31 +5,44 @@ const defaultConfig = {
   exposedNullRE: exposedNullRE
 };
 
+function cleanPath(path) {
+  return path.map(e => {
+    let s = e.nodeName;
+    if (s) s = s.toLowerCase();
+    if (e.id) s += '#' + e.id;
+    if (e.className) s += '.' + className;
+    return s;
+  });
+}
+
+function buildPath(path) {
+  var lastNode = path[path.length - 1];
+  if (!lastNode.parentNode) {
+    return path;
+  }
+  return buildPath(path.concat(lastNode.parentNode));
+}
+
 function installNullChecker(Raven, config) {
   config = Object.assign({}, defaultConfig, config);
 
   function reportNull(text, path) {
-    Raven.context(
-      {
-        extra: {
-          path: path
-        }
-      },
-      function() {
-        Raven.captureMessage("Exposed Null: " + text);
-      }
-    );
+    console.log(cleanPath(path));
+
+    Raven.setExtraContext({
+      path: cleanPath(path)
+    });
+    Raven.captureMessage('Exposed Null: ' + text);
   }
 
   function handleText(textNode) {
     var newText = textNode.nodeValue;
-
     if (newText.match(exposedNullRE)) {
-      if (config.DEBUG) console.log("scanned: ", newText);
-      reportNull(newText);
+      if (config.DEBUG) console.log('scanned: ', newText);
+      reportNull(newText, buildPath([textNode.parentNode]));
     }
   }
-  
+
   function walk(node) {
     // I stole this function from cloud 2 butt:
     // http://is.gd/mwZp7E
@@ -58,7 +71,7 @@ function installNullChecker(Raven, config) {
       signal,
       function(e) {
         const newText = e.target.textContent || e.target.innerText;
-        if (config.DEBUG) console.log(signal + ": ", e);
+        if (config.DEBUG) console.log(signal + ': ', e);
         if (newText.match(exposedNullRE)) {
           reportNull(newText, e.path);
         }
@@ -67,8 +80,8 @@ function installNullChecker(Raven, config) {
     );
   }
 
-  observeSignal("DOMSubtreeModified");
-  observeSignal("DOMNodeInserted");
+  observeSignal('DOMSubtreeModified');
+  observeSignal('DOMNodeInserted');
   //do initial scan
   setTimeout(() => walk(document.body), 1000);
 }

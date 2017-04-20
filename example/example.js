@@ -1,39 +1,31 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Raven = require('raven-js') ;
-Raven
-    .config('https://5fdcb3aeb7f446a1aaac367d932a48bd@sentry.io/100653')
-    .install();
+var Raven = require('raven-js');
+Raven.config('https://5fdcb3aeb7f446a1aaac367d932a48bd@sentry.io/100653').install();
 
-var exposedNullCheck = require('./exposed-null-check');
-exposedNullCheck(Raven,{DEBUG:false});
-
+var exposedNullCheck = require('../exposed-null-check');
+exposedNullCheck(Raven, {DEBUG: false});
 
 var Hello = React.createClass({
-  getInitialState:function(){
-    setTimeout(()=>this.setState({foo:undefined/7}), 1000)
+  getInitialState: function() {
+    setTimeout(() => this.setState({foo: undefined / 7}), 1000);
     return {};
-
   },
   render: function() {
-    return(
+    return (
       <div>
-      Hello2 {this.state.foo}
-      {this.state.foo > 0.8 && <Hello/>}
-    </div>);
-
+        Hello2 NaN {this.state.foo}
+        {this.state.foo > 0.8 && <Hello />}
+      </div>
+    );
   }
 });
 
-ReactDOM.render(
-  <Hello name="World" />,
-  document.getElementById('container')
-);
+ReactDOM.render(<Hello name="World" />, document.getElementById('container'));
 
 // console.log(ReactDOM)
 // console.log(React)
-
 
 // var target = document;
 //
