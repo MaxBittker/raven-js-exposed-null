@@ -27,8 +27,6 @@ function installNullChecker(Raven, config) {
   config = Object.assign({}, defaultConfig, config);
 
   function reportNull(text, path) {
-    console.log(cleanPath(path));
-
     Raven.setExtraContext({
       path: cleanPath(path)
     });
