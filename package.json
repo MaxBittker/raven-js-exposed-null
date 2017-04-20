@@ -1,6 +1,6 @@
 {
   "name": "raven-js-exposed-null",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "scan for rendered null",
   "main": "exposed-null-check.js",
   "repository": {
