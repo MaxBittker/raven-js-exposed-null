@@ -22,4 +22,6 @@ exposedNullCheck(Raven);
 ```
 
 ![nyt-NaN](https://pbs.twimg.com/media/C8aCN_cWAAQEENI.jpg)
+![paypall-object object](https://i.imgur.com/JduDjZZ.png)
 ![paypall-undefined](http://i.imgur.com/iac3qtJ.jpg)
+
